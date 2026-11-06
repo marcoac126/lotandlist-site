@@ -4,30 +4,43 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Privacy | Lot &amp; List</title>
-<meta name="description" content="Lot &amp; List collects no personal data. Everything you type stays in your browser.">
+<meta name="description" content="Lot &amp; List collects no personal data: no cookies, cookie-free visit counts only, and everything you type stays in your browser.">
 <link rel="canonical" href="https://lotandlist.com/privacy/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lot &amp; List">
 <meta property="og:title" content="Privacy | Lot &amp; List">
-<meta property="og:description" content="Lot &amp; List collects no personal data. Everything you type stays in your browser.">
+<meta property="og:description" content="Lot &amp; List collects no personal data: no cookies, cookie-free visit counts only, and everything you type stays in your browser.">
 <meta property="og:url" content="https://lotandlist.com/privacy/">
 <meta property="og:image" content="https://lotandlist.com/assets/social.png">
 <meta name="theme-color" content="#1F4E5A">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../assets/site.css?v=20261105a">
-<script src="../assets/site.js?v=20261105a" defer></script>
+<link rel="stylesheet" href="../assets/site.css?v=20261106a">
+<script src="../assets/site.js?v=20261106a" defer></script>
+<script src="../assets/count.js?v=20261106a" defer></script>
 </head>
 <body>
 <div class="wrap" data-page=""><header class="top"><a class="brand" href="../"><img src="../assets/logo-64.png" alt="" width="32" height="32"><span class="word">Lot <b>&amp;</b> List</span></a><nav class="nav" aria-label="Calculators"><a href="../list-price-calculator/">List price</a><a href="../lot-cost-calculator/">Lot cost</a><a href="../fee-comparison/">Fee comparison</a></nav></header><main><h1>Privacy</h1>
-<p class="lede">Short version: we don't collect anything.</p>
+<p class="lede">Short version: no cookies, nothing that identifies you, and nothing you type leaves your browser.</p>
 <p>The calculators run entirely in your browser. What you type is never sent to us or anyone else. To save you retyping, your last entries are kept in your browser's local storage on your own device. Clear your browser's site data to remove them.</p>
-<p>There are no cookies, ads, analytics, tracking pixels, or outside scripts on this site. The site is hosted on GitHub Pages, which, like any web host, may keep standard server logs; see GitHub's privacy statement.</p>
+<p>There are no cookies, ads, tracking pixels, or outside scripts on this site. The site is hosted on GitHub Pages, which, like any web host, may keep standard server logs; see GitHub's privacy statement.</p>
+<h2>Visit counts</h2>
+<p>We use GoatCounter, a privacy-friendly counter, to see how many people visit each page and which outside links get clicked (for example, "etsy.com from the list price page"). It uses no cookies, doesn't store your IP address, and only keeps totals, so no one, including us, can identify you. Nothing you type into the calculators is ever sent. Data is stored in the EU. See <a href="https://www.goatcounter.com/privacy" rel="noopener" target="_blank">GoatCounter's privacy policy</a>.</p>
+<p><button type="button" class="btn ghost" id="count-toggle">Turn off counting on this browser</button> <span id="count-status" aria-live="polite"></span></p>
 <p>Some pages link to other sites, such as an Etsy shop or a fee source. Those sites have their own privacy policies. The Etsy shop linked on these pages is our own. If we ever add affiliate links, we'll say so clearly next to each one and update this page first.</p>
-<p>Updated November 5, 2026.</p></main><footer class="fine">
+<p>Updated November 6, 2026.</p></main><footer class="fine">
 <p>Fee estimates are for US standard seller accounts, checked <span data-fees-checked>Oct 1, 2026</span> using the <a href="https://www.underpriced.app/data/reseller-fees" rel="noopener" target="_blank">Underpriced reseller fee tracker</a>. Ads, promotions, boosts, and international fees aren't included. eBay and Etsy also charge on the sales tax the buyer pays, and some eBay categories use other rates (handbags 15%, books 15.3%, sneakers $150+ 8%). Platforms change fees, so confirm on each platform's own fee page.</p>
 <p>Everything you type stays in your browser. This is a calculator, not tax or financial advice.</p>
 <nav aria-label="Site"><a href="../list-price-calculator/">List price calculator</a><a href="../lot-cost-calculator/">Lot cost calculator</a><a href="../fee-comparison/">Fee comparison</a><a href="../privacy/">Privacy</a></nav>
 </footer></div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var b = document.getElementById("count-toggle"), st = document.getElementById("count-status");
+  if (!b) return;
+  function show() { var off = window.LotCount && window.LotCount.isOff(); b.textContent = off ? "Turn counting back on" : "Turn off counting on this browser"; st.textContent = off ? "Counting is off on this browser." : ""; }
+  b.addEventListener("click", function () { if (window.LotCount) { window.LotCount.setOff(!window.LotCount.isOff()); show(); } });
+  show();
+});
+</script>
 </body>
 </html>
