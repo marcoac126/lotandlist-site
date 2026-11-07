@@ -54,7 +54,8 @@ p, li { max-width: 65ch; }
 
 .tool { background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; padding: 20px; display: grid; gap: 20px; }
 .fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
-.field { display: grid; gap: 6px; min-width: 0; }
+.field { display: grid; gap: 6px; min-width: 0; align-content: end; } /* line inputs up when a label in the row wraps */
+.field-wide { grid-column: 1 / -1; }
 .field label { font-size: 0.85rem; font-weight: 650; color: var(--muted); }
 input[type=text], select {
   width: 100%; font: inherit; font-variant-numeric: tabular-nums; color: var(--ink);
